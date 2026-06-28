@@ -132,5 +132,31 @@ def sum_of_numbers(start,end):
         total += i 
     return total
 print(sum_of_numbers(0,5))
-player_iventory= [200, "Iron", "Gold"]
-print(f"Inventory: {player_iventory}")
+
+
+player_inventory= ["200 gold", "Iron", "Gold"]
+
+
+print(f"Inventory: {player_inventory}")
+# day 8
+def get_inventory(): 
+    return[" Healing Potion", "Leather Scraps", "Iron"]
+def test():
+    inventory = get_inventory()
+    print(f"Inventory contains: {inventory}")
+test()
+player_gold = player_inventory[0]
+print(f"The player has {player_gold}")
+player_inventory_length= len(player_inventory)
+print(f"The lenght of player inventory is {player_inventory_length}") 
+def get_last_value(inventory):
+    last_index = len(inventory)-1
+    last_value = inventory[last_index]
+    return last_value 
+last_num_inv = get_last_value(player_inventory)
+print(last_num_inv)
+def smelting_items(inventory, index):
+    inventory[index]= inventory[index] + " bar"
+    return inventory
+smelted_inventory = smelting_items(player_inventory,2)
+print(smelted_inventory)
