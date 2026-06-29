@@ -160,3 +160,64 @@ def smelting_items(inventory, index):
     return inventory
 smelted_inventory = smelting_items(player_inventory,2)
 print(smelted_inventory)
+# day 9
+def generate_user_list(num_of_users):
+    player_ids= []
+    for i in range(0, num_of_users):
+        player_ids.append(i)
+    return player_ids
+print(generate_user_list(5))
+def clear_inventory(inventory):
+    for i in range(0, len(inventory)):
+        item = inventory.pop()
+        print(f"Selling: {item}")
+        print(f"inventory: {inventory}")
+print(clear_inventory(player_inventory))
+
+
+inventory = ["bread","Leather Scraps", "shortsword", "potion", "banana" ]
+
+
+def get_item_counts(items):
+    potion_count=0
+    bread_count = 0
+    shortsword_count = 0
+    wrong_items = 0 
+    for i in range(0, len(items)):
+        item = items[i]
+        if item == "bread":
+            bread_count+=1
+        elif item == "potion":
+            potion_count+=1
+        elif item == "shortsword":
+            shortsword_count+=1
+        else:
+            wrong_items+=1
+    if wrong_items>1:
+        print(f"There is {wrong_items} wrong items ")
+    if wrong_items == 0 :
+        print(f"There is no wrong item")
+    else:
+        print(f"There is {wrong_items} wrong item")
+
+    return potion_count, bread_count, shortsword_count
+print(get_item_counts(inventory))
+for item in inventory:
+    print(item)
+def contains_leather_scraps(items):
+    found = False 
+    for item in items:
+        if item == "Leather Scraps":
+            found = True
+            break
+        else: 
+            print(item, " is not leather scraps")
+    return found
+print(contains_leather_scraps(inventory))
+def check_character_lvls():
+    old_character_lvls= [1, 5, 9, 10, 33, 44, 55]
+    new_character_lvls= [1, 5, 10, 11, 34, 44, 55]
+    for i in range(0, len(old_character_lvls)):
+        if old_character_lvls[i]<new_character_lvls[i]:
+            print("The player leveled up on index" , i)
+check_character_lvls()
