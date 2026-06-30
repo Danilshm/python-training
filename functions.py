@@ -220,4 +220,50 @@ def check_character_lvls():
     for i in range(0, len(old_character_lvls)):
         if old_character_lvls[i]<new_character_lvls[i]:
             print("The player leveled up on index" , i)
+        else:
+            print("The player didnt level up")
 check_character_lvls()
+# day 10
+negative_inf = float('-inf')
+positive_ing = float('inf')
+def find_max(damage_dealt):
+    max_damage = float("-inf")
+    for damage in damage_dealt:
+        if damage> max_damage:
+            max_damage= damage
+        else:
+            print("This is not the highest damage")
+    return max_damage
+numbers= [10,20,33,-10,50, 25]
+print(find_max(numbers))
+def get_odd_numbers_from_list(num):
+    odd_numbers= []
+    for i in range(0, len(num)):
+        if num[i]%2==1:
+            odd_numbers.append(num[i])
+        else:
+            pass
+    return odd_numbers
+def get_odd_numbers(num):
+    odd_numbers=[]
+    for i in range(0, num):
+        remainder = i%2
+        if remainder == 1:
+            odd_numbers.append(i)
+        else: 
+            pass 
+    return odd_numbers
+def get_even_numbers_from_list(num):
+    even_numbers= []
+    for i in range(0, len(num)):
+        remainder = num[i]%2
+        if remainder == 0:
+            even_numbers.append(num[i])
+    return even_numbers
+print(get_odd_numbers_from_list(numbers))
+print(f"This is odd numbers starting from 0 to 4 {get_odd_numbers(5)}")
+print(f"This is even numebrs from list {get_even_numbers_from_list(numbers)}")
+def get_slices(champion):
+    slc= champion[0:3]
+    print(f"Slice: {slc}")
+get_slices(numbers)
